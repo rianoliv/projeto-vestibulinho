@@ -18,82 +18,66 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <label class="form-label" for="nome">Nome:</label>
-                <input class="form-control" type="text" id="nome">
+        <form id="formulario-cadastro">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="form-label" for="nome">Nome:</label>
+                    <input class="form-control" type="text" id="nome" required>
+                </div>
+                <div class="col-sm-6">
+                    <label class="form-label" for="email">E-mail:</label>
+                    <input class="form-control" type="email" name="email" id="email" required>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <label class="form-label" for="email">Email:</label>
-                <input class="form-control" type="email" name="email" id="email">
+            <br><br>
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="curso">Curso:</label>
+                    <select class="form-select" name="curso" id="curso" required>
+                        <option value="" selected disabled>Selecione um curso</option>
+                        <option value="adm"> Administração - (EaD - On-line)</option>
+                        <option value="comercio">Comércio (EaD - On-Line)</option>
+                        <option value="tecquimica">Técnico em Química </option>
+                        <option value="EM_ADM"> Ensino Médio com Habilitação Profissional de Técnico em Administração - (M-Tec)</option>
+                        <option value="EM_DS"> Ensino Médio com Habilitação Profissional de Técnico em Desenvolvimento de Sistemas - (M-Tec)</option>
+                        <option value="EM_EDF"> Ensino Médio com Habilitação Profissional de Técnico em Edificações - (M-Tec)</option>
+                        <option value="EM_TI">  Ensino Médio com Habilitação Profissional de Técnico em Informática - (M-Tec - N)</option>
+                        <option value="EM_MEC">Ensino Médio com Habilitação Profissional de Técnico em Mecatrônica - (M-Tec - N)</option>
+                        <option value="EM_NUTRI">Ensino Médio com Habilitação Profissional de Técnico em Nutrição e Dietética - (M-Tec)</option>
+                        <option value="EM_QUI">Ensino Médio com Habilitação Profissional de Técnico em Química - (M-Tec)</option>
+                        <option value="EM_RH">   Ensino Médio com Habilitação Profissional de Técnico em Recursos Humanos - (M-Tec - N)</option>
+                        <option value="EM_SJ">  Ensino Médio com Habilitação Profissional de Técnico em Serviços Jurídicos - (M-Tec)</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <br><br>
-        <div class="row">
-            <div class="col">
-                <label class="form-label" for="curso">Curso:</label> <br>
-                <select name="curso" id="curso">
-                    <option value="adm"> Administração - (EaD - On-line)</option>
-                    <option value="comercio">Comércio (EaD - On-Line)</option>
-                    <option value="tecquimica">Técnico em Química </option>
-                    <option value="EM_ADM"> Ensino Médio com Habilitação Profissional de Técnico em Administração - (M-Tec)</option>
-                    <option value="EM_DS"> Ensino Médio com Habilitação Profissional de Técnico em Desenvolvimento de Sistemas - (M-Tec)</option>
-                    <option value="EM_EDF"> Ensino Médio com Habilitação Profissional de Técnico em Edificações - (M-Tec)</option>
-                    <option value="EM_TI">  Ensino Médio com Habilitação Profissional de Técnico em Informática - (M-Tec - N)</option>
-                    <option value="EM_MEC">Ensino Médio com Habilitação Profissional de Técnico em Mecatrônica - (M-Tec - N)</option>
-                    <option value="EM_NUTRI">Ensino Médio com Habilitação Profissional de Técnico em Nutrição e Dietética - (M-Tec)</option>
-                    <option value="EM_QUI">Ensino Médio com Habilitação Profissional de Técnico em Química - (M-Tec)</option>
-                    <option value="EM_RH">   Ensino Médio com Habilitação Profissional de Técnico em Recursos Humanos - (M-Tec - N)</option>
-                    <option value="EM_SJ">  Ensino Médio com Habilitação Profissional de Técnico em Serviços Jurídicos - (M-Tec)</option>
-                </select>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="cadastrarAluno()">Matricule-se</button>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col">
-                <input type="submit" class="btn btn-primary" value="Matricule-Se">
-            </div>
-        </div>
+        </form>
         <br><br>
 
         <div class="row">
-            <div class="rol"><h2>Alunos Cadastrados</h2></div>
+            <div class="col"><h2>Alunos Cadastrados</h2></div>
         </div>
 
         <div class="row">
             <div class="col">
-               <table class="table">
+                <div class="table-responsive">
+                    <table class="table">
                     <thead>
                         <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">E-mail</th>
                         <th scope="col">Curso</th>
-                       
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                       
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>John</td>
-                        <td>Doe</td>
-                       
-                        </tr>
+                    <tbody id="alunos-cadastrados">
                     </tbody>
                     </table>
-
-                </table>
+                </div>
             </div>
         </div>
 

@@ -1,11 +1,20 @@
 body {
-   background-image: url('img/topo01.png');
-   
+    background-image: url('img/topo01.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .container {
     background-color: white;
 }
 
+.carousel img {
+    height: auto;
+}
 
+.dropdown-menu {
+    width: min(700px, calc(100vw - 2rem));
+    white-space: normal;
+}
 
